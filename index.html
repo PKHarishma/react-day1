@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Using Just HTML -->
+    <p id="para">Hello world</p>
+    <button id="btn">click</button>
+    <script>
+        const para=document.getElementById("para");
+        const btn=document.getElementById("btn");
+        // Using JS to Manipulate the DOM
+        btn.addEventListener("click",()=>
+    {
+         para.textContent="today's world";         
+    })
+    </script>
+     <div id="root1">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+     </div>
+    
+    <!-- Using React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <div id="root">
+        hellooooo!
+    </div>
+    <script>
+        const element=React.createElement("p","null","hey is there someone!");
+        const root= ReactDOM.createRoot(document.getElementById("root"));
+        root.render(element);
+    </script>
+    <!-- nested -->
+    
+    <script>
+        const element1=React.createElement("div","null",[ 
+        React.createElement("h1","null","h1 changed"),React.createElement("h2","null","h2 changed")
+        ]);
+        const root1= ReactDOM.createRoot(document.getElementById("root1"));
+        root1.render(element1);
+    </script>
+</body>
+</html>
